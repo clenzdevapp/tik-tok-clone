@@ -8,7 +8,7 @@ import Videos from "./dbModel.js";
 
 // app config
 const app = express();
-const port = 9000;
+const port = process.env.PORT || 9000;
 
 // middlewares
 // CLE: Middleware-Komponente ist notwendig für das Posten von Inhalten
