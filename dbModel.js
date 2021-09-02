@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// Datenstruktur
 const tiktokSchema = mongoose.Schema({
   url: String,
   channel: String,

@@ -8,16 +8,16 @@ import Videos from "./dbModel.js";
 
 // app config
 const app = express();
-const port = process.env.PORT || 9000;
+const port = process.env.PORT || 8000;
 
 // middlewares
 // CLE: Middleware-Komponente ist notwendig für das Posten von Inhalten
 app.use(express.json());
-app.use((req, res, next) => {
-  res.setHeaders("Access-Control-Allow-Origin", "*"),
-    res.setHeaders("Access-Control-Allow-Headers", "*"),
-    next();
-});
+// app.use((req, res, next) => {
+//   res.setHeaders("Access-Control-Allow-Origin", "*"),
+//     res.setHeaders("Access-Control-Allow-Headers", "*"),
+//     next();
+// });
 
 // DB config
 const connection_url =
@@ -30,7 +30,7 @@ mongoose.connect(connection_url, {
 });
 
 // API Endpoints
-app.get("/", (req, res) => res.status(200).send("Hello World!"));
+app.get("/", (req, res) => res.status(200).send("TikTok Backend connected!"));
 
 app.get("/v1/posts", (req, res) => res.status(200).send(Data));
 
